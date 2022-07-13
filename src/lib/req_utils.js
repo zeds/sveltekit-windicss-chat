@@ -37,3 +37,23 @@ export function browserSet(key, value) {
     localStorage.setItem(key, value)
   }
 }
+
+ /**
+ * @param {string} path
+ */
+ export async function strapi_get(path) {
+  let url = `${import.meta.env.VITE_STRAPI_DOMAIN}/api/${path}`;
+  console.log('url=',url);
+
+  const res = await fetch(url,{
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+    })
+
+  const res_json = await res.json();
+
+  return res_json.data;
+}
+
