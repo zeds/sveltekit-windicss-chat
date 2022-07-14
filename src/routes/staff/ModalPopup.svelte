@@ -2,9 +2,7 @@
 	// @ts-nocheck
 	import {onMount, beforeUpdate, afterUpdate} from 'svelte';
 	import Button from "$lib/components/Button.svelte"
-	import ChatBox from "$lib/components/ChatBox.svelte"
 
-	//import {ChatMessage} from "$lib/components/ChatMessage.svelte"
 
 	//Utils
 	import {strapi_get,
@@ -130,19 +128,111 @@ username
 		}
 	}
 
+
+  //function changeActiveTab(event,tabID){
+	const changeActiveTab = (event, tabID) => {
+		console.log("changeActiveTab");
+
+    let element = event.target;
+    while(element.nodeName !== "A"){
+      element = element.parentNode;
+    }
+    ulElement = element.parentNode.parentNode;
+    aElements = ulElement.querySelectorAll("li > a");
+    tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+    for(let i = 0 ; i < aElements.length; i++){
+      aElements[i].classList.remove("text-white");
+      aElements[i].classList.remove("bg-pink-600");
+      aElements[i].classList.add("text-pink-600");
+      aElements[i].classList.add("bg-white");
+      tabContents[i].classList.add("hidden");
+      tabContents[i].classList.remove("block");
+    }
+    element.classList.remove("text-pink-600");
+    element.classList.remove("bg-white");
+    element.classList.add("text-white");
+    element.classList.add("bg-pink-600");
+    document.getElementById(tabID).classList.remove("hidden");
+    document.getElementById(tabID).classList.add("block");
+  }
+	
+
+
+
+
 </script>
 
 
-<div class="content-container flex flex-col flex-auto h-full p-6 bg-gray-700">
+
+
+<div class="flex flex-wrap" id="tabs-id">
+  <div class="w-full">
+    <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-pink-600" onclick="changeAtiveTab(event,'tab-profile')">
+          <i class="fas fa-space-shuttle text-base mr-1"></i>  Profile
+        </a>
+      </li>
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" onclick="changeAtiveTab(event,'tab-settings')">
+          <i class="fas fa-cog text-base mr-1"></i>  Settings
+        </a>
+      </li>
+      <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" onclick="changeAtiveTab(event,'tab-options')">
+          <i class="fas fa-briefcase text-base mr-1"></i>  Options
+        </a>
+      </li>
+    </ul>
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+      <div class="px-4 py-5 flex-auto">
+        <div class="tab-content tab-space">
+          <div class="block" id="tab-profile">
+            <p>
+              Collaboratively administrate empowered markets via
+              plug-and-play networks. Dynamically procrastinate B2C users
+              after installed base benefits.
+              <br />
+              <br />
+              Dramatically visualize customer directed convergence
+              without revolutionary ROI.
+            </p>
+          </div>
+          <div class="hidden" id="tab-settings">
+            <p>
+              Completely synergize resource taxing relationships via
+              premier niche markets. Professionally cultivate one-to-one
+              customer service with robust ideas.
+              <br />
+              <br />
+              Dynamically innovate resource-leveling customer service for
+              state of the art customer service.
+            </p>
+          </div>
+          <div class="hidden" id="tab-options">
+            <p>
+              Efficiently unleash cross-media information without
+              cross-media value. Quickly maximize timely deliverables for
+              real-time schemas.
+              <br />
+              <br />
+              Dramatically maintain clicks-and-mortar solutions
+              without functional solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="content-container flex flex-col flex-auto h-full p-6 bg-gray-700">
 	<div bind:this={divScroll} class="flex flex-col h-full overflow-x-auto mb-4 ">
 		<div  class="flex flex-col h-full bg-green-600">
 			<div class="grid grid-cols-12 gap-y-2 bg-green-600">
 				Chat messages
 				{#each messages as payload}
 					<div class="col-start-1 col-end-8 p-3 rounded-lg">
-						<ChatBox username={payload.username} avatar={payload.avatar} text={payload.message} />
-					</div>
-					<!--<div class="col-start-1 col-end-8 p-3 rounded-lg">
 						<div class="flex flex-row items-center">
 							<img class="w-10 h-10 rounded-full" src={payload.avatar} alt="Rounded avatar">
 							<div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
@@ -151,7 +241,7 @@ username
 								</p>
 							</div>
 						</div>
-					</div>-->
+					</div>
 				{/each}												
 			</div>
 		</div>
@@ -175,13 +265,13 @@ username
 			</button>
 		</div>
 	</form>
-</div>
-
+</div>-->
+	
 
 
 <style>
 
 .content-container {
-  height: calc(100vh - theme('spacing.10'));
+  height: calc(100vh - theme('spacing.40'));
 }	
 </style>

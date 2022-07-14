@@ -1,8 +1,11 @@
 <script>
 // @ts-nocheck
 	import { goto } from '$app/navigation';
-	import Button from "$lib/components/Button.svelte"
 	import { onMount, onDestroy } from "svelte";
+  import Content from './ModalContent.svelte';
+  import Modal from 'svelte-simple-modal';
+	import Button from "$lib/components/Button.svelte"
+
 
 	//Utils
 	import {strapi_get,
@@ -80,6 +83,10 @@
 
 
 </script>
+
+
+<Modal><Content /></Modal>
+
 <br>
 <br>
 <br>
