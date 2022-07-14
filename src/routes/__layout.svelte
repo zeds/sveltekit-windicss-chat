@@ -12,6 +12,9 @@
 <a href="/chat"><button class="mx-2 my-2 px-6 py-2 bg-gray-500 font-medium text-sm hover:bg-gray-600 text-gray-100 rounded">
 	Chat
 </button></a>
+<a href="/tab"><button class="mx-2 my-2 px-6 py-2 bg-gray-500 font-medium text-sm hover:bg-gray-600 text-gray-100 rounded">
+	Tab
+</button></a>
 
 </nav>
 
