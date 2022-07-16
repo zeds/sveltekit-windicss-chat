@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import Chat from '$lib/components/Chat.svelte'
 
   let root;
   let text;
@@ -44,29 +45,29 @@
 
 </script>
 
-<div bind:this={root}>
-<div class="rounded border w-1/2 mx-auto mt-4">
+<div bind:this={root} class="bg-red-500 mx-full p-2">
+<div class="rounded border mx-auto bg-green-500 p-2">
   <!-- Tabs -->
-  <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b">
-    <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">Tab 1</a></li>
+  <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b bg-blue-500">
+    <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">予約情報</a></li>
     <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#second">Tab 2</a></li>
-    <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#third">Tab 3</a></li>
-    <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#fourth">Tab 4</a></li>
+    <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#third">ログ</a></li>
+    <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#fourth">コメント</a></li>
   </ul>
 
   <!-- Tab Contents -->
-  <div id="tab-contents">
-    <div id="first" class="p-4">
+  <div id="tab-contents" class="bg-yellow-200 h-100">
+    <div id="first" class="p-1">
       First tab
     </div>
-    <div id="second" class="hidden p-4">
+    <div id="second" class="hidden p-1">
       Second tab
     </div>
-    <div id="third" class="hidden p-4">
-      Third tab
+    <div id="third" class="hidden">
+		　ログ
     </div>
-    <div id="fourth" class="hidden p-4">
-      Fourth tab
+    <div id="fourth" class="hidden">
+      <Chat />
     </div>
   </div>
 </div>
