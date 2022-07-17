@@ -139,7 +139,6 @@ username
 	<div bind:this={divScroll} class="flex flex-col overflow-x-auto mb-4 ">
 		<div  class="flex flex-col bg-green-600">
 			<div class="grid grid-cols-12 gap-y-2 bg-green-600">
-				Chat messages
 				{#each messages as payload}
 					<div class="col-start-1 col-end-8 p-3 rounded-lg">
 						<ChatBox username={payload.username} avatar={payload.avatar} text={payload.message} timestamp={payload.updatedAt} />

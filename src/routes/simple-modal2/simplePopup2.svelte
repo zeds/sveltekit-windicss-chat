@@ -14,7 +14,9 @@
   onMount(() => {
 		// const nd = root.querySelectorAll('.forminput');
 		tabsContainer = root.querySelector("#tabs");
+		
 		tabTogglers = tabsContainer.querySelectorAll("#tabs a");
+		
 		console.log(tabTogglers);
 
 		tabTogglers.forEach(function(toggler) {

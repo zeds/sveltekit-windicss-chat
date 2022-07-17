@@ -24,6 +24,9 @@
 <a href="/simple-modal2"><button class="mx-2 my-2 px-6 py-2 bg-gray-500 font-medium text-sm hover:bg-gray-600 text-gray-100 rounded">
 	simple-modal2
 </button></a>
+<a href="/dropdown"><button class="mx-2 my-2 px-6 py-2 bg-gray-500 font-medium text-sm hover:bg-gray-600 text-gray-100 rounded">
+	Dropdown
+</button></a>
 
 </nav>
 
