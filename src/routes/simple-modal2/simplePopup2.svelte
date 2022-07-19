@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
-	import Chat from '$lib/components/Chat.svelte'
+	import Chat from '$lib/components/Chat.svelte';
+	import Booking from '$lib/components/Booking2.svelte';
 
   let root;
   let text;
@@ -47,8 +48,9 @@
 
 </script>
 
-<div bind:this={root} class="bg-red-500 mx-full p-2">
-<div class="rounded border mx-auto bg-green-500 p-2">
+<div bind:this={root} class="bg-red-500 mx-full p-1">
+
+<div class="rounded border mx-full bg-green-100 p-1 m-2">
   <!-- Tabs -->
   <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b bg-blue-500">
     <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">予約情報</a></li>
@@ -58,9 +60,9 @@
   </ul>
 
   <!-- Tab Contents -->
-  <div id="tab-contents" class="bg-yellow-200 h-100">
+  <div id="tab-contents" class="bg-yellow-200 h-150">
     <div id="first" class="p-1">
-      First tab
+      <Booking />
     </div>
     <div id="second" class="hidden p-1">
       Second tab

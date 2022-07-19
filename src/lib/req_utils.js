@@ -4,6 +4,7 @@ import { writable, get } from "svelte/store";
 /**
 browserGet
 browserSet
+strapi_get
 **/
 
 

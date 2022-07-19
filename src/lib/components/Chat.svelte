@@ -52,15 +52,10 @@
 	})
 
 	beforeUpdate(() => {
-		console.log("beforeUpdate");
-		// determine whether we should auto-scroll
-		// once the DOM is updated...
 		autoscroll = divScroll && (divScroll.offsetHeight + divScroll.scrollTop) > (divScroll.scrollHeight - 10);
 	});
 
 	afterUpdate(() => {
-		console.log("afterUpdate");
-		// ...the DOM is now in sync with the data
 		if (autoscroll) divScroll.scrollTo(0, divScroll.scrollHeight);
 	});
 
@@ -81,8 +76,9 @@
 			let message = response[i].attributes.message;
 			let updatedAt = response[i].attributes.updatedAt;
 			let avatar = `${import.meta.env.VITE_STRAPI_DOMAIN}`+response[i].attributes.staff.data.attributes.avatar.data.attributes.formats.thumbnail.url;
+			let staffId = response[i].attributes.staff.data.id;
 
-			let msg = {username, message, avatar, updatedAt}
+			let msg = {username, message, avatar, updatedAt, staffId}
 			messages.push(msg);
 			console.log("updatedAt=",updatedAt);
 		}
@@ -135,13 +131,13 @@ username
 </script>
 
 
-<div class="flex flex-col flex-auto h-100 p-2 bg-gray-700">
+<div class="flex flex-col flex-auto h-150 w-200 p-2 bg-gray-700">
 	<div bind:this={divScroll} class="flex flex-col overflow-x-auto mb-4 ">
 		<div  class="flex flex-col bg-green-600">
 			<div class="grid grid-cols-12 gap-y-2 bg-green-600">
 				{#each messages as payload}
-					<div class="col-start-1 col-end-8 p-3 rounded-lg">
-						<ChatBox username={payload.username} avatar={payload.avatar} text={payload.message} timestamp={payload.updatedAt} />
+					<div class="col-start-1 col-end-10 p-3 rounded-lg">
+						<ChatBox username={payload.username} avatar={payload.avatar} text={payload.message} timestamp={payload.updatedAt} staffId={payload.staffId}/>
 					</div>
 				{/each}												
 			</div>
