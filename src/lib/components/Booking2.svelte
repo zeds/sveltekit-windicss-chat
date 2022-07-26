@@ -286,51 +286,51 @@
 
 </script>
 
-<div class="overflow-auto h-150">
+<div class="overflow-auto h-200">
 
 
 <div class='flex flex-wrap'>
   <div class='w-full md:w-1/2 bg-white pb-4'>
     <div class="font-bold p-2">基本情報</div>
-		<TextInput type="text" title="id" content={id} show={false} />
-		<TextInput type="text" title="start_date" content={start_date} show={false} />
-		<TextInput type="text" title="end_date" content={end_date} show={false} />
-		<TextInput type="text" title="guestnum" content={guestnum} show={false} />
-		<TextInput type="text" title="summary" content={summary} show={false} />
-		<TextInput type="text" title="status" content={status} show={false} />
-		<TextInput type="text" title="checkin_type" content={checkin_type} show={false} />
-		<TextInput type="text" title="created_at" content={created_at} show={false} />
-		<TextInput type="text" title="updated_at" content={updated_at} show={false} />
+		<TextInput type="text" title="id" value={id} show={false} />
+		<TextInput type="text" title="start_date" value={start_date} show={false} />
+		<TextInput type="text" title="end_date" value={end_date} show={false} />
+		<TextInput type="text" title="guestnum" value={guestnum} show={false} />
+		<TextInput type="text" title="summary" value={summary} show={false} />
+		<TextInput type="text" title="status" value={status} show={false} />
+		<TextInput type="text" title="checkin_type" value={checkin_type} show={false} />
+		<TextInput type="text" title="created_at" value={created_at} show={false} />
+		<TextInput type="text" title="updated_at" value={updated_at} show={false} />
 
-		<TextInput type="text" title="payment_status" content={payment_status} show={false} />
-		<TextInput type="text" title="currency" content={currency} show={false} />
-		<TextInput type="text" title="reservation_site" content={reservation_site} show={false} />
-		<TextInput type="text" title="payment_method" content={payment_method} show={false} />
-		<TextInput type="text" title="adultnum" content={adultnum} show={false} />
-		<TextInput type="text" title="childnum" content={childnum} show={false} />
-		<TextInput type="text" title="infantnum" content={infantnum} show={false} />
+		<TextInput type="text" title="payment_status" value={payment_status} show={false} />
+		<TextInput type="text" title="currency" value={currency} show={false} />
+		<TextInput type="text" title="reservation_site" value={reservation_site} show={false} />
+		<TextInput type="text" title="payment_method" value={payment_method} show={false} />
+		<TextInput type="text" title="adultnum" value={adultnum} show={false} />
+		<TextInput type="text" title="childnum" value={childnum} show={false} />
+		<TextInput type="text" title="infantnum" value={infantnum} show={false} />
 
 	</div>
 
 
   <div class='w-full md:w-1/2 bg-white pb-4'>
     <div class="font-bold p-2">ユーザー情報</div>
-		<TextInput type="text" title="user_name" content={user_name} show={false} />
-		<TextInput type="text" title="user_email" content={user_email} show={false} />
-		<TextInput type="text" title="user_language" content={user_language} show={false} />
-		<TextInput type="text" title="user_phone" content={user_phone} show={false} />
-		<TextInput type="text" title="user_address" content={user_address} show={false} />
-		<TextInput type="text" title="user_country" content={user_country} show={false} />
-		<TextInput type="text" title="user_postal_code" content={user_postal_code} show={false} />
+		<TextInput type="text" title="user_name" value={user_name} show={false} />
+		<TextInput type="text" title="user_email" value={user_email} show={false} />
+		<TextInput type="text" title="user_language" value={user_language} show={false} />
+		<TextInput type="text" title="user_phone" value={user_phone} show={false} />
+		<TextInput type="text" title="user_address" value={user_address} show={false} />
+		<TextInput type="text" title="user_country" value={user_country} show={false} />
+		<TextInput type="text" title="user_postal_code" value={user_postal_code} show={false} />
 		<br>
     <div class="font-bold p-2">施設情報</div>
-		<TextInput type="text" title="room_id" content={room_id} show={false} />
-		<TextInput type="text" title="room_name" content={room_name} show={false} />
-		<TextInput type="text" title="room_room_unit" content={room_room_unit} show={false} />
-		<TextInput type="text" title="house_id" content={house_id} show={false} />
-		<TextInput type="text" title="house_name" content={house_name} show={false} />
+		<TextInput type="text" title="room_id" value={room_id} show={false} />
+		<TextInput type="text" title="room_name" value={room_name} show={false} />
+		<TextInput type="text" title="room_room_unit" value={room_room_unit} show={false} />
+		<TextInput type="text" title="house_id" value={house_id} show={false} />
+		<TextInput type="text" title="house_name" value={house_name} show={false} />
 		<br>
-		<TextInput type="text" title="cancellation_fee" content={cancellation_fee} show={false} />
+		<TextInput type="text" title="cancellation_fee" value={cancellation_fee} show={false} />
 		<br>
     <div class="font-bold p-2">タスク</div>
 		<div class="ml-3">

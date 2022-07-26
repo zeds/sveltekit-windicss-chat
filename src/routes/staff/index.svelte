@@ -63,6 +63,7 @@
 			let name = response[i].attributes.name;
 			let id = response[i].id;
 			console.log("## id=",id);
+			console.log("## response[i]=",response[i].attributes);
 			console.log("## attributes=",response[i].attributes.avatar.data.attributes.formats.thumbnail.url);
 			let avatar = response[i].attributes.avatar.data.attributes.formats.thumbnail.url
 			console.log("## avatar=",avatar);

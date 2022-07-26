@@ -13,6 +13,8 @@
 	//注意！selected=0とすると、デフォルト項目名が表示されない
 	let selected;	//デフォルトの項目名が表示されなかった。selectedという名前にしないとダメ？
 	export let tableName='';
+	export let title='';
+	export let id='';
 
 	onMount(async function () {
 		console.log("onMount - SelectList");
@@ -52,13 +54,18 @@ $: console.log({selected});
 先頭の"選択してください"が選択された場合は、selected=0
 値を取得するには、items[selected-1].attributes.name-->
 
-<select
-	type="text"
-	bind:value={selected}
-	on:change="{() => changeSelection()}"
-	class="w-3/4">
-	<option value=0>▽ 選択してください</option>
-	{#each items as item}
-		<option value={item.id}>{item.attributes.name}</option>
-	{/each}
-</select>
+<div class="m-1 w-110">
+	<label for={id} class="ml-1 mt-4 block text-xl text-gray-500">{title}</label>
+
+	<select
+		id={id}
+		type="text"
+		bind:value={selected}
+		on:change="{() => changeSelection()}"
+		class="w-4/5 rounded bg-gray-100 border-solid border-black focus:ring-0 shadow-sm">
+		<option value=0>▽ 選択してください</option>
+		{#each items as item}
+			<option value={item.id}>{item.attributes.name}</option>
+		{/each}
+	</select>
+</div>

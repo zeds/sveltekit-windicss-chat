@@ -9,6 +9,7 @@
 		"prepare": "svelte-kit sync"
 	},
 	"devDependencies": {
+		"@beyonk/svelte-notifications": "^4.2.0",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"clsx": "^1.2.1",

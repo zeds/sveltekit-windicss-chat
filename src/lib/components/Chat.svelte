@@ -131,7 +131,7 @@ username
 </script>
 
 
-<div class="flex flex-col flex-auto h-150 w-200 p-2 bg-gray-700">
+<div class="flex flex-col flex-auto h-200 w-200 p-2 bg-gray-700">
 	<div bind:this={divScroll} class="flex flex-col overflow-x-auto mb-4 ">
 		<div  class="flex flex-col bg-green-600">
 			<div class="grid grid-cols-12 gap-y-2 bg-green-600">

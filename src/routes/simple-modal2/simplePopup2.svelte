@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Chat from '$lib/components/Chat.svelte';
 	import Booking from '$lib/components/Booking2.svelte';
+	import CheckinStaff from '$lib/components/CheckinStaff.svelte';
 
   let root;
   let text;
@@ -52,20 +53,20 @@
 
 <div class="rounded border mx-full bg-green-100 p-1 m-2">
   <!-- Tabs -->
-  <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b bg-blue-500">
+  <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b bg-gray-300">
     <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#first">予約情報</a></li>
-    <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#second">Tab 2</a></li>
+    <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#second">担当者</a></li>
     <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#third">ログ</a></li>
     <li class="px-4 text-gray-800 font-semibold py-2 rounded-t"><a href="#fourth">コメント</a></li>
   </ul>
 
   <!-- Tab Contents -->
-  <div id="tab-contents" class="bg-yellow-200 h-150">
+  <div id="tab-contents" class="bg-yellow-200 h-full">
     <div id="first" class="p-1">
       <Booking />
     </div>
     <div id="second" class="hidden p-1">
-      Second tab
+      <CheckinStaff />
     </div>
     <div id="third" class="hidden">
 		　ログ

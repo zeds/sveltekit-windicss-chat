@@ -58,3 +58,43 @@ export function browserSet(key, value) {
   return res_json.data;
 }
 
+/**
+ *
+ *
+ * @export
+ * @param {*} fetch
+ * @param {*} url
+ * @param {*} method
+ * @param {*} body
+ * @return {*} 
+ */
+export async function generic_api(fetch, url, method,  body) {
+
+  try {
+    let headers = {}
+    if(!(body instanceof FormData)) {
+      headers['Content-Type'] = 'application/json'
+      body = JSON.stringify(body)
+    }
+    console.log('url=',url)
+    console.log('method=',method)
+    console.log('body=',body)
+
+    const res = await fetch(url, {
+      method: method,
+      body,
+      headers
+    })
+
+    if(res.ok) {
+      try {
+        const json = await res.json()
+        return json
+      } catch(err) {
+        throw { id: '', message: 'Any unknown error has occured'}
+      }
+    }
+  } catch(err) {
+    throw customError ? err : {id: '', message: 'An unknown error has occured' }
+  }
+}

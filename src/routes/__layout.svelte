@@ -30,9 +30,6 @@
 <a href="/profile"><button class="mx-2 my-2 px-6 py-2 bg-gray-500 font-medium text-sm hover:bg-gray-600 text-gray-100 rounded">
 	Profile
 </button></a>
-<a href="/checkin"><button class="mx-2 my-2 px-6 py-2 bg-gray-500 font-medium text-sm hover:bg-gray-600 text-gray-100 rounded">
-	Checkin、清掃担当
-</button></a>
 
 </nav>
 

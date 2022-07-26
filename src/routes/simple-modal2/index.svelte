@@ -10,8 +10,8 @@
 	unstyled={true}
   classBg="fixed top-0 left-0 w-screen h-screen flex flex-col justify-center bg-transparent"
   classWindowWrap="h-auto bg-transparent p-5"
-  classWindow="bg-lime-400 p-1"
-  classContent="bg-orange-300 p-1 "
+  classWindow="bg-gray-300 p-1"
+  classContent="bg-gray-600 p-1 "
   closeButton={true}
 
 >
